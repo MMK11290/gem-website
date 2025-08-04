@@ -1,0 +1,12 @@
+id: 1
+description: کوارتز طبیعی شفاف با درخشش بالا
+price: 120,000 تومان
+weight: 200g
+type: clear-quartz
+---
+id: 2
+description: آمتیست بنفش تیره مناسب کلکسیون
+price: 150,000 تومان
+weight: 180g
+type: amethyst
+---

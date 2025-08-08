@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 33% 98%;
+    --foreground: 160 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 15% 15%;
+    --primary: 158 29% 22%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 28 25% 24%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 30 20% 94%;
+    --muted-foreground: 26 14% 40%;
+    --accent: 42 70% 45%;
+    --accent-foreground: 160 15% 15%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 12% 85%;
+    --input: 30 12% 85%;
+    --ring: 158 29% 22%;
+    --radius: 0.75rem;
+    --sidebar-background: 30 33% 98%;
+    --sidebar-foreground: 160 15% 15%;
+    --sidebar-primary: 158 29% 22%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 30 20% 94%;
+    --sidebar-accent-foreground: 160 15% 15%;
+    --sidebar-border: 30 12% 85%;
+    --sidebar-ring: 42 70% 45%;
+    /* Extended tokens */
+    --primary-glow: 158 29% 32%;
+    --gold: 42 70% 50%;
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.35);
+    --gradient-primary: radial-gradient(1200px 600px at 50% -20%, hsl(var(--accent) / 0.25), transparent),
+      linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--accent)) 100%);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 224 40% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 40% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 158 29% 32%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 28 22% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222.2 32% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 42 70% 55%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222.2 32% 14%;
+    --input: 222.2 32% 14%;
+    --ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 224 40% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 158 29% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222.2 32% 12%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 222.2 32% 12%;
+    --sidebar-ring: 42 70% 55%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    font-family: 'Vazirmatn', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    @apply bg-background text-foreground;
+  }
+}
+
+
+@layer utilities {
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .text-gradient {
+    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background-color: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+@layer components {
+  /* Keyframe animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
